@@ -14,6 +14,8 @@
 		1C779E04210ACF45001C2BE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C779E03210ACF45001C2BE6 /* Assets.xcassets */; };
 		1C779E07210ACF45001C2BE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C779E05210ACF45001C2BE6 /* LaunchScreen.storyboard */; };
 		1C779E12210ACF45001C2BE6 /* GPiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C779E11210ACF45001C2BE6 /* GPiTests.swift */; };
+		1C779E1D210AD0CD001C2BE6 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C779E1C210AD0CD001C2BE6 /* ThirdViewController.swift */; };
+		AC1E0253C5F884F581E12BE6 /* Pods_GPi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0B030A1E97A022DFDCB6A5 /* Pods_GPi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,10 @@
 		1C779E0D210ACF45001C2BE6 /* GPiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C779E11210ACF45001C2BE6 /* GPiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPiTests.swift; sourceTree = "<group>"; };
 		1C779E13210ACF45001C2BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C779E1C210AD0CD001C2BE6 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		1D0B030A1E97A022DFDCB6A5 /* Pods_GPi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23A87675F7C04F86030FC555 /* Pods-GPi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPi.release.xcconfig"; path = "Pods/Target Support Files/Pods-GPi/Pods-GPi.release.xcconfig"; sourceTree = "<group>"; };
+		394C488571EF45A076A4BBE6 /* Pods-GPi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPi/Pods-GPi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1E0253C5F884F581E12BE6 /* Pods_GPi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +65,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1566E2FA92446BA3A8409DB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D0B030A1E97A022DFDCB6A5 /* Pods_GPi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1C779DEE210ACF44001C2BE6 = {
 			isa = PBXGroup;
 			children = (
 				1C779DF9210ACF44001C2BE6 /* GPi */,
 				1C779E10210ACF45001C2BE6 /* GPiTests */,
 				1C779DF8210ACF44001C2BE6 /* Products */,
+				E1562562AAEF80F0AF5C23DB /* Pods */,
+				1566E2FA92446BA3A8409DB6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +99,7 @@
 				1C779DFA210ACF44001C2BE6 /* AppDelegate.swift */,
 				1C779DFC210ACF44001C2BE6 /* FirstViewController.swift */,
 				1C779DFE210ACF44001C2BE6 /* SecondViewController.swift */,
+				1C779E1C210AD0CD001C2BE6 /* ThirdViewController.swift */,
 				1C779E00210ACF44001C2BE6 /* Main.storyboard */,
 				1C779E03210ACF45001C2BE6 /* Assets.xcassets */,
 				1C779E05210ACF45001C2BE6 /* LaunchScreen.storyboard */,
@@ -99,6 +117,15 @@
 			path = GPiTests;
 			sourceTree = "<group>";
 		};
+		E1562562AAEF80F0AF5C23DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				394C488571EF45A076A4BBE6 /* Pods-GPi.debug.xcconfig */,
+				23A87675F7C04F86030FC555 /* Pods-GPi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C779E16210ACF45001C2BE6 /* Build configuration list for PBXNativeTarget "GPi" */;
 			buildPhases = (
+				E3EB1A3A0EB0EE46BC093F1D /* [CP] Check Pods Manifest.lock */,
 				1C779DF3210ACF44001C2BE6 /* Sources */,
 				1C779DF4210ACF44001C2BE6 /* Frameworks */,
 				1C779DF5210ACF44001C2BE6 /* Resources */,
+				0F9D573C1D2A9883568BF7BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +224,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F9D573C1D2A9883568BF7BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GPi/Pods-GPi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaMQTT/CocoaMQTT.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaMQTT.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GPi/Pods-GPi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3EB1A3A0EB0EE46BC093F1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GPi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1C779DF3210ACF44001C2BE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -202,6 +274,7 @@
 			files = (
 				1C779DFF210ACF44001C2BE6 /* SecondViewController.swift in Sources */,
 				1C779DFB210ACF44001C2BE6 /* AppDelegate.swift in Sources */,
+				1C779E1D210AD0CD001C2BE6 /* ThirdViewController.swift in Sources */,
 				1C779DFD210ACF44001C2BE6 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,11 +433,13 @@
 		};
 		1C779E17210ACF45001C2BE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 394C488571EF45A076A4BBE6 /* Pods-GPi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XR388X57TJ;
 				INFOPLIST_FILE = GPi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,11 +453,13 @@
 		};
 		1C779E18210ACF45001C2BE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23A87675F7C04F86030FC555 /* Pods-GPi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XR388X57TJ;
 				INFOPLIST_FILE = GPi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
