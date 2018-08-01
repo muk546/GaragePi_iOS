@@ -23,22 +23,11 @@ class ThirdViewController: UIViewController {
     @IBOutlet var txtIP: UITextField!
 
     @IBOutlet var txtPORT: UITextField!
-    // var MyStr: String = ""
- //   var mqttClient: CocoaMQTT = CocoaMQTT(clientID: "iOS Device", host: "10.0.0.50", port: 1883)
     
-      //  lazy var mqttClient = CocoaMQTT(clientID: "iOS Device", host: MyStr, port: 1883)
-        
-    
- 
     func student(name: String) -> String {
         return name
     }
-    
-   // lazy var MyStr = txtIP.text!
-   // lazy var mqttClient = CocoaMQTT(clientID: "iOS Device", host: MyStr, port: 1883)
-   // lazy var mqttClient = CocoaMQTT(clientID: "iOS Device", host: MyStr, port: 1883)
-   // lazy var mqttClient = CocoaMQTT(clientID: "iOS Device", host: MyStr, port: 1883)
-   // var mqttClient = CocoaMQTT(clientID: "iOS Device", host: MyStr, port: 1883)
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

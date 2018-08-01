@@ -18,6 +18,7 @@ import CocoaMQTT
     
     @IBOutlet var segmentedControl: UISegmentedControl!
     
+    //switch to get index
    @objc @IBAction func indexChanged(_ sender: UISegmentedControl) {
     switch(sender.selectedSegmentIndex){
         case 0:
@@ -55,13 +56,25 @@ import CocoaMQTT
     //chnage: this one button will open and close door
     //with a .2 sec delay in my python script to reset
     //the 5v relay.
-    @IBAction func btn_close(_ sender: UIButton) {
-
+    
+    @IBAction func btn_operate(_ sender: UIButton) {
         
-        print("OFF button" )
-        mqttClient.publish("rpi/gpio", withString: "off " + GPIO_pin_selected)
+        print("Operate button" )
+        mqttClient.publish("rpi/gpio", withString: "op " + GPIO_pin_selected)
         
     }
+    
+    //open all doors at once (on all for pins)
+    @IBAction func btn_operate_all(_ sender: UIButton) {
+        print("Operate all button" )
+        mqttClient.publish("rpi/gpio", withString: "op 23")
+        mqttClient.publish("rpi/gpio", withString: "op 24")
+        mqttClient.publish("rpi/gpio", withString: "op 27")
+        mqttClient.publish("rpi/gpio", withString: "op 22")
+        
+    }
+    
+    
     
     
     
