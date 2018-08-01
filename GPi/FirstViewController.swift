@@ -42,7 +42,22 @@ import CocoaMQTT
         override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+            let testingIP = defaults.string(forKey: "IP")
+            let testingPORT = defaults.string(forKey: "PORT")
+
+            
+            if (testingIP != nil) && (testingPORT != nil){
+                
+                print("User Saved IP: " + testingIP!)
+                print("User Saved PORT: " + testingPORT!)
+                
+                
+                mqttClient = CocoaMQTT(clientID: "iOS Device", host: testingIP!, port: PORT_Variable_Settings)
+                
+                mqttClient.connect()
+                
+                
+            }
     
 
     }
@@ -62,6 +77,7 @@ import CocoaMQTT
         print("Operate button" )
         mqttClient.publish("rpi/gpio", withString: "op " + GPIO_pin_selected)
         
+        print("User saved IP: " + User_Saved_IP)
     }
     
     //open all doors at once (on all for pins)

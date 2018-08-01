@@ -16,7 +16,12 @@ var PORT_Variable_Settings: UInt16 = 1883
 
 var mqttClient = CocoaMQTT(clientID: "iOS Device", host: IP_Variable_Settings, port: PORT_Variable_Settings)
 
+let defaults = UserDefaults.standard
+
+
 var User_Saved_IP = ""
+var User_Saved_PORT: UInt16? = UInt16("")
+
 
 class ThirdViewController: UIViewController {
     
@@ -32,21 +37,30 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        UserDefaults.standard.set("String", forKey: "Key")
         
-        let string = UserDefaults.standard.object(forKey: "Key")
-        print(string!)
         
-        let userDefaults = UserDefaults.standard
+        //get user saved data
+        let testingIP = defaults.string(forKey: "IP")
+        let testingPORT = defaults.string(forKey: "PORT")
+
+        if (testingIP != nil) && (testingPORT != nil){
+            
+            print("User Saved IP: " + testingIP!)
+            print("User Saved PORT: " + testingPORT!)
+
+            
+            txtIP.text = testingIP
+            txtPORT.text = testingPORT
+            
+             mqttClient = CocoaMQTT(clientID: "iOS Device", host: testingIP!, port: PORT_Variable_Settings)
+            
+            mqttClient.connect()
+            
+
+        }
 
         
-        userDefaults.set(User_Saved_IP, forKey: "IP")
         
-        
-        let testobj = userDefaults.object(forKey: "IP")
-        
-        print("Saved IP Third: ")
-        print(testobj ?? "")
         
 
     }
@@ -65,16 +79,23 @@ class ThirdViewController: UIViewController {
         //get new value
         var temp_ip: String = txtIP.text!
         var temp_port: UInt16? = UInt16(txtPORT.text!)
-
-        
-
-        
         print(temp_ip)
         print(temp_port)
 
         IP_Variable_Settings = temp_ip
         
         User_Saved_IP = temp_ip
+        
+        User_Saved_PORT = temp_port
+
+        
+        //save Defaults on button push
+        
+        defaults.set(User_Saved_IP, forKey: "IP")
+        
+        defaults.set(User_Saved_PORT, forKey: "PORT")
+
+
         
 
         mqttClient = CocoaMQTT(clientID: "iOS Device", host: IP_Variable_Settings, port: PORT_Variable_Settings)
@@ -100,6 +121,9 @@ class ThirdViewController: UIViewController {
         //disconnect
         mqttClient.disconnect()
         print("Disconnect")
+        
+        defaults.set("", forKey: "IP")
+
 
 
     }
