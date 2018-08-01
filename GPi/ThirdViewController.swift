@@ -52,12 +52,11 @@ class ThirdViewController: UIViewController {
             txtIP.text = testingIP
             txtPORT.text = testingPORT
             
-             mqttClient = CocoaMQTT(clientID: "iOS Device", host: testingIP!, port: PORT_Variable_Settings)
-            
-            mqttClient.connect()
-            
+
 
         }
+        
+    
 
         
         

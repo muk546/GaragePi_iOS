@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:GPi.xcodeproj">
+      location = "group:/Users/mukul/Dropbox/Programming/GPi/Garage Pi.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
