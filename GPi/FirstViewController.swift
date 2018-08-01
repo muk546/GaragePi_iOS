@@ -12,6 +12,10 @@ import CocoaMQTT
 
  class FirstViewController: UIViewController {
     
+    
+    @IBOutlet var btn_main: UIButton!
+    var flag = false
+    
     let GPIO_PIN_NUM = ["23", "24", "27", "22"]
     
     var GPIO_pin_selected = "23"
@@ -38,10 +42,19 @@ import CocoaMQTT
         }
     }
     
+    func setButtonImage(){
+        let imgName = flag ? "close" : "open"
+        let image1 = UIImage(named: "\(imgName).png")!
+        self.btn_main.setImage(image1, for: .normal)
+    }
+
     
         override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+            
+            setButtonImage()
+            
             let testingIP = defaults.string(forKey: "IP")
             let testingPORT = defaults.string(forKey: "PORT")
 
@@ -76,6 +89,9 @@ import CocoaMQTT
     
     @IBAction func btn_operate(_ sender: UIButton) {
         
+        flag = !flag
+        setButtonImage()
+
         print("Operate button" )
         mqttClient.publish("rpi/gpio", withString: "op " + GPIO_pin_selected)
         

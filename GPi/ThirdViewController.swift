@@ -103,7 +103,7 @@ class ThirdViewController: UIViewController {
         //connect
         mqttClient.connect()
         
-
+        
         print("CONNECT NOW VAR STATE: " + IP_Variable_Settings)
 
     }
