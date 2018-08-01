@@ -22,6 +22,7 @@ class SecondViewController: UIViewController {
 
     func play()
     {
+        
         //messing around with streaming m3u8 content
 
         //https://wolverine.raywenderlich.com/content/ios/tutorials/video_streaming/foxVillage.m3u8

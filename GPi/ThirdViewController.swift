@@ -66,6 +66,7 @@ class ThirdViewController: UIViewController {
         var temp_ip: String = txtIP.text!
         var temp_port: UInt16? = UInt16(txtPORT.text!)
 
+        
 
         
         print(temp_ip)
