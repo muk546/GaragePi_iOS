@@ -32,22 +32,29 @@ class SecondViewController: UIViewController {
         let testingPORT = defaults.string(forKey: "PORT")
         let testingPORTCAM = defaults.string(forKey: "PORT_CAM")
         
-        print("User Saved IP: " + testingIP!)
-        print("User Saved PORT: " + testingPORT!)
-        print("User Saved PORT CAM: " + testingPORTCAM!)
+
+        if (testingIP != nil) && (testingPORT != nil) && (testingPORTCAM != nil){
+
+            print("User Saved IP: " + testingIP!)
+            print("User Saved PORT: " + testingPORT!)
+            print("User Saved PORT CAM: " + testingPORTCAM!)
+
+            //let videoURL = URL(string: "http://192.168.1.9:8080/camera/livestream.m3u8")
+            var string_cam_url = "http://" + testingIP! + ":" + testingPORTCAM! + "/camera/livestream.m3u8"
+            
+            let videoURL = URL(string: string_cam_url)
+            
+            let player = AVPlayer(url: videoURL!)
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+            self.present(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
+            
+        }
 
         
-        //let videoURL = URL(string: "http://192.168.1.9:8080/camera/livestream.m3u8")
-        var string_cam_url = "http://" + testingIP! + ":" + testingPORTCAM! + "/camera/livestream.m3u8"
-
-        let videoURL = URL(string: string_cam_url)
-
-        let player = AVPlayer(url: videoURL!)
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        self.present(playerViewController, animated: true) {
-            playerViewController.player!.play()
-        }
+      
 
         
     }
@@ -74,21 +81,28 @@ class SecondViewController: UIViewController {
         let testingPORT = defaults.string(forKey: "PORT")
         let testingPORTCAM = defaults.string(forKey: "PORT_CAM")
         
-        print("User Saved IP: " + testingIP!)
-        print("User Saved PORT: " + testingPORT!)
-        print("User Saved PORT CAM: " + testingPORTCAM!)
-        
-        var string_cam_url = "http://" + testingIP! + ":" + testingPORTCAM! + "/camera/livestream.m3u8"
-        
-        print(string_cam_url)
-        
-        let url : URL = URL(string: string_cam_url)!
-        
-        
-        player = AVPlayer(url: url)
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = self.VideoHero.bounds
-        self.VideoHero.layer.addSublayer(playerLayer)
+        if (testingIP != nil) && (testingPORT != nil) && (testingPORTCAM != nil){
+
+            print("User Saved IP: " + testingIP!)
+            print("User Saved PORT: " + testingPORT!)
+            print("User Saved PORT CAM: " + testingPORTCAM!)
+            
+            
+            var string_cam_url = "http://" + testingIP! + ":" + testingPORTCAM! + "/camera/livestream.m3u8"
+            
+            print(string_cam_url)
+            
+            let url : URL = URL(string: string_cam_url)!
+            
+            
+            player = AVPlayer(url: url)
+            let playerLayer = AVPlayerLayer(player: player)
+            playerLayer.frame = self.VideoHero.bounds
+            self.VideoHero.layer.addSublayer(playerLayer)
+            
+        }
+
+      
         
     }
     
