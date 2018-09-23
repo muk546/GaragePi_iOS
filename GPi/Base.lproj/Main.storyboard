@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +13,7 @@
         <!--Door-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Door" id="9pv-A4-QxB" customClass="FirstViewController" customModule="GPi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Door" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Garage_Pi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YT0-uW-dwx">
-                                <rect key="frame" x="84" y="145" width="208" height="42"/>
+                                <rect key="frame" x="83" y="145" width="209" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="WwB-R3-tIp"/>
                                 </constraints>
@@ -182,7 +181,7 @@
         <!--Settings-->
         <scene sceneID="YEB-1b-cB4">
             <objects>
-                <viewController title="Settings" id="vMJ-hF-9E6" customClass="ThirdViewController" customModule="GPi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="vMJ-hF-9E6" customClass="ThirdViewController" customModule="Garage_Pi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UfC-cx-0pc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,7 +226,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJn-ig-stY">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8080" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJn-ig-stY">
                                 <rect key="frame" x="155" y="189" width="204" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -252,7 +251,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utT-IY-ypc">
-                                <rect key="frame" x="63" y="297" width="39" height="30"/>
+                                <rect key="frame" x="62.5" y="297" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="btn_Reset:" destination="vMJ-hF-9E6" eventType="touchUpInside" id="oWC-0h-PU2"/>
@@ -295,6 +294,7 @@
                     <connections>
                         <outlet property="txtIP" destination="csd-Ff-QRm" id="k2z-xp-ezj"/>
                         <outlet property="txtPORT" destination="ExN-hN-O8g" id="rad-PF-5UA"/>
+                        <outlet property="txtPORTCAM" destination="NJn-ig-stY" id="GKF-Rr-B7d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asH-r9-paw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -304,7 +304,7 @@
         <!--Camera-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController title="Camera" id="8rJ-Kc-sve" customClass="SecondViewController" customModule="GPi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Camera" id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Garage_Pi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,42 +317,34 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BS-Xb-uzj">
-                                <rect key="frame" x="104.5" y="449" width="166" height="30"/>
-                                <state key="normal" title="Open Video Placeholder"/>
+                                <rect key="frame" x="129" y="449" width="117" height="30"/>
+                                <state key="normal" title="Open Full Screen"/>
                                 <connections>
                                     <action selector="BTN_PUSH:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="a2U-3P-Edc"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWT-uT-tdU">
-                                <rect key="frame" x="67" y="147" width="240" height="228"/>
+                                <rect key="frame" x="0.0" y="126" width="375" height="249"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU3-Fz-J4U">
-                                <rect key="frame" x="133.5" y="77" width="108" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dU3-Fz-J4U" firstAttribute="centerX" secondItem="MWT-uT-tdU" secondAttribute="centerX" id="1eD-F5-808"/>
-                            <constraint firstItem="7BS-Xb-uzj" firstAttribute="top" secondItem="MWT-uT-tdU" secondAttribute="bottom" constant="74" id="2YB-E4-JTb"/>
-                            <constraint firstItem="MWT-uT-tdU" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="67" id="7L2-qu-nCA"/>
-                            <constraint firstItem="MWT-uT-tdU" firstAttribute="top" secondItem="dU3-Fz-J4U" secondAttribute="bottom" constant="49" id="7RX-LH-qcr"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="7BS-Xb-uzj" secondAttribute="bottom" constant="139" id="E9S-jE-ntF"/>
-                            <constraint firstItem="MWT-uT-tdU" firstAttribute="centerX" secondItem="7BS-Xb-uzj" secondAttribute="centerX" id="GIW-Wz-AF0"/>
-                            <constraint firstItem="wZB-GX-AQX" firstAttribute="centerX" secondItem="dU3-Fz-J4U" secondAttribute="centerX" id="Ktb-R8-ahJ"/>
-                            <constraint firstAttribute="trailing" secondItem="wZB-GX-AQX" secondAttribute="trailing" id="dGK-3x-qKs"/>
-                            <constraint firstItem="dU3-Fz-J4U" firstAttribute="top" secondItem="wZB-GX-AQX" secondAttribute="bottom" constant="13" id="gE0-PG-DTh"/>
-                            <constraint firstItem="wZB-GX-AQX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="l46-cK-E0H"/>
-                            <constraint firstItem="wZB-GX-AQX" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="nvo-UM-2MV"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="7BS-Xb-uzj" secondAttribute="bottom" constant="139" id="9tJ-4y-UkF"/>
+                            <constraint firstItem="wZB-GX-AQX" firstAttribute="leading" secondItem="MWT-uT-tdU" secondAttribute="leading" id="AG2-Qa-T1z"/>
+                            <constraint firstItem="MWT-uT-tdU" firstAttribute="top" secondItem="wZB-GX-AQX" secondAttribute="bottom" constant="62" id="CyV-NS-533"/>
+                            <constraint firstAttribute="trailing" secondItem="wZB-GX-AQX" secondAttribute="trailing" id="IX4-kl-HbF"/>
+                            <constraint firstItem="wZB-GX-AQX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="YgJ-tV-Kz4"/>
+                            <constraint firstItem="7BS-Xb-uzj" firstAttribute="top" secondItem="MWT-uT-tdU" secondAttribute="bottom" constant="74" id="fW6-fb-5Qs"/>
+                            <constraint firstItem="wZB-GX-AQX" firstAttribute="trailing" secondItem="MWT-uT-tdU" secondAttribute="trailing" id="j6N-9z-mIo"/>
+                            <constraint firstItem="MWT-uT-tdU" firstAttribute="centerX" secondItem="7BS-Xb-uzj" secondAttribute="centerX" id="mtO-Wa-s32"/>
+                            <constraint firstItem="wZB-GX-AQX" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="wM0-gH-suM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="videoView" destination="MWT-uT-tdU" id="dVg-Iu-GwB"/>
+                        <outlet property="VideoHero" destination="MWT-uT-tdU" id="Mvh-ov-w5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

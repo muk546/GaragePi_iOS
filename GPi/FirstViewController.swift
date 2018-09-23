@@ -83,7 +83,7 @@ import CocoaMQTT
     }
     
 
-    //chnage: this one button will open and close door
+    //change: this one button will open and close door
     //with a .2 sec delay in my python script to reset
     //the 5v relay.
     

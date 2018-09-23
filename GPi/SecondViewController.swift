@@ -16,50 +16,88 @@ import AudioToolbox
 
 class SecondViewController: UIViewController {
     
-    let playerViewController = AVPlayerViewController()
     
-    @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var VideoHero: UIView!
+    var player : AVPlayer?
 
-    func play()
-    {
-        
-        //messing around with streaming m3u8 content
 
-        //https://wolverine.raywenderlich.com/content/ios/tutorials/video_streaming/foxVillage.m3u8
+
+    
+    
+    //fullscreen method
+    func handlePlay() {
         
+        //user input url:
+        let testingIP = defaults.string(forKey: "IP")
+        let testingPORT = defaults.string(forKey: "PORT")
+        let testingPORTCAM = defaults.string(forKey: "PORT_CAM")
         
-        let videoUrl = URL(string: "https://wolverine.raywenderlich.com/content/ios/tutorials/video_streaming/foxVillage.m3u8")
+        print("User Saved IP: " + testingIP!)
+        print("User Saved PORT: " + testingPORT!)
+        print("User Saved PORT CAM: " + testingPORTCAM!)
+
         
-        let player = AVPlayer(url: videoUrl!)
-        
+        //let videoURL = URL(string: "http://192.168.1.9:8080/camera/livestream.m3u8")
+        var string_cam_url = "http://" + testingIP! + ":" + testingPORTCAM! + "/camera/livestream.m3u8"
+
+        let videoURL = URL(string: string_cam_url)
+
+        let player = AVPlayer(url: videoURL!)
         let playerViewController = AVPlayerViewController()
-        
         playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            playerViewController.player!.play()
+        }
+
         
-        playerViewController.showsPlaybackControls = false
-
-        videoView.addSubview(playerViewController.view)
-
-        playerViewController.view.frame = videoView.bounds
-        
-        playerViewController.player?.play()
-
-
-      //  self.present(playerViewController, animated: true) {
-       //     playerViewController.player!.play()}
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+      //  handlePlay()
+        
+    
         
 
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        
+        //hardcoded url
+        // let url : URL = URL(string: "http://192.168.1.9:8080/camera/livestream.m3u8")!
+        
+        //user input url:
+        let testingIP = defaults.string(forKey: "IP")
+        let testingPORT = defaults.string(forKey: "PORT")
+        let testingPORTCAM = defaults.string(forKey: "PORT_CAM")
+        
+        print("User Saved IP: " + testingIP!)
+        print("User Saved PORT: " + testingPORT!)
+        print("User Saved PORT CAM: " + testingPORTCAM!)
+        
+        var string_cam_url = "http://" + testingIP! + ":" + testingPORTCAM! + "/camera/livestream.m3u8"
+        
+        print(string_cam_url)
+        
+        let url : URL = URL(string: string_cam_url)!
+        
+        
+        player = AVPlayer(url: url)
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.VideoHero.bounds
+        self.VideoHero.layer.addSublayer(playerLayer)
         
     }
-
+    
+    
     @IBAction func BTN_PUSH(_ sender: UIButton) {
-        play()
-
+        handlePlay()
+        //player?.play()
+        
+        
     }
     
     
